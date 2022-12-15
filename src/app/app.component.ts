@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {EmojiService} from "./services/emoji.service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'github-emoji-tracker';
+
+  constructor(public e: EmojiService) {
+    this.e.getEmojis();
+  }
+
 }
