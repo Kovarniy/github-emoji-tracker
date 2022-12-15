@@ -1,0 +1,13 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar__item {
+  margin: 5px 10px;
+  border: 1px solid black;
+}
+
+.sidebar__item--active {
+  color: red;
+}

@@ -1,1 +1,32 @@
-<p>all-emojis-list works!</p>
+<div class="list-title">
+  <div>
+    {{title.toUpperCase()}}
+  </div>
+
+  <app-search-field>
+  </app-search-field>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emoji of emojiList">
+      <th>{{emoji?.name}}</th>
+      <th>{{emoji?.url}}</th>
+      <th>
+        <img [src]="emoji?.url" [alt]="emoji?.name"
+             class="emoji-preview">
+      </th>
+      <th></th>
+      <th></th>
+    </tr>
+  </tbody>
+</table>
+
