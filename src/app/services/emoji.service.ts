@@ -3,7 +3,8 @@ import {HttpClient} from "@angular/common/http";
 import {Emoji} from "../models/Emoji";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
+  // useExisting: true
 })
 export class EmojiService {
 

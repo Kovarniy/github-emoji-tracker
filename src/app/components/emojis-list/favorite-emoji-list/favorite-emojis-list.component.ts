@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {EmojiService} from "../../../services/emoji.service";
 
 @Component({
   selector: 'app-favorites-emojis-list',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavoriteEmojisListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private emojiService: EmojiService) { }
 
   ngOnInit(): void {
+    this.emojiService.getEmojis();
   }
 
 }

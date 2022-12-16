@@ -9,6 +9,7 @@ import { SearchFieldComponent } from './components/search-fild/search-field.comp
 import { AllEmojisListComponent } from './components/emojis-list/all-emojis-list/all-emojis-list.component';
 import { FavoriteEmojisListComponent } from './components/emojis-list/favorite-emoji-list/favorite-emojis-list.component';
 import { RemovedEmojisListComponent } from './components/emojis-list/removed-emojis-list/removed-emojis-list.component';
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RemovedEmojisListComponent } from './components/emojis-list/removed-emo
     SearchFieldComponent,
     AllEmojisListComponent,
     FavoriteEmojisListComponent,
-    RemovedEmojisListComponent
+    RemovedEmojisListComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

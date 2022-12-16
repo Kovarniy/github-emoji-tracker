@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {EmojiService} from "../../../services/emoji.service";
 import {Emoji} from "../../../models/Emoji";
 
@@ -11,10 +11,24 @@ export class AllEmojisListComponent implements OnInit {
 
   title = 'все';
   emojiList!: Emoji[];
-  constructor(private emojiService: EmojiService) { }
 
-  ngOnInit(): void {
-   this.emojiList = this.emojiService.getEmojis();
+  bufferedEmojiList!: Emoji[];
+
+  /**
+   * Искомое имя emoji
+   */
+  neededEmojiName: string = '';
+
+  constructor(private emojiService: EmojiService) {
   }
 
+  filtergender() {}
+
+  ngOnInit(): void {
+    this.emojiList = this.emojiService.getEmojis();
+  }
+
+  onSearchEmoji(emojiName: string) {
+    this.neededEmojiName = emojiName;
+  }
 }
