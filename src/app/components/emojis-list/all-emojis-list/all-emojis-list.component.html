@@ -10,10 +10,10 @@
 <table>
   <thead>
     <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Название</th>
+      <th>Ссылка</th>
+      <th>Превью</th>
+      <th colspan="2">Действия</th>
     </tr>
   </thead>
   <tbody>
@@ -26,8 +26,17 @@
             <img [src]="emoji?.url" [alt]="emoji?.name"
                  class="emoji-preview">
           </td>
-          <td></td>
-          <td></td>
+          <td>
+            <fa-icon [icon]="faStar"
+                     [ngClass]="{'star--clicked': emoji.isFavorite}"
+                     class="clicked-element"
+                     (click)="onChangeFavoriteState(emoji)"></fa-icon>
+          </td>
+          <td>
+            <fa-icon [icon]="faRemove"
+                     class="clicked-element"
+                     (click)="onRemove(emoji)"></fa-icon>
+          </td>
         </ng-container>
       </tr>
     </ng-container>

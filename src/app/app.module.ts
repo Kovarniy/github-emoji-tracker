@@ -10,6 +10,7 @@ import { AllEmojisListComponent } from './components/emojis-list/all-emojis-list
 import { FavoriteEmojisListComponent } from './components/emojis-list/favorite-emoji-list/favorite-emojis-list.component';
 import { RemovedEmojisListComponent } from './components/emojis-list/removed-emojis-list/removed-emojis-list.component';
 import { SearchPipe } from './pipes/search.pipe';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SearchPipe } from './pipes/search.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

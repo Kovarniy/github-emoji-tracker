@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {EmojiService} from "../../../services/emoji.service";
 import {Emoji} from "../../../models/Emoji";
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faRemove } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-all-emojis-list',
@@ -11,8 +13,8 @@ export class AllEmojisListComponent implements OnInit {
 
   title = 'все';
   emojiList!: Emoji[];
-
-  bufferedEmojiList!: Emoji[];
+  faStar = faStar;
+  faRemove = faRemove;
 
   /**
    * Искомое имя emoji
@@ -22,8 +24,6 @@ export class AllEmojisListComponent implements OnInit {
   constructor(private emojiService: EmojiService) {
   }
 
-  filtergender() {}
-
   ngOnInit(): void {
     this.emojiList = this.emojiService.getEmojis();
   }
@@ -31,4 +31,13 @@ export class AllEmojisListComponent implements OnInit {
   onSearchEmoji(emojiName: string) {
     this.neededEmojiName = emojiName;
   }
+
+  onChangeFavoriteState(emoji: Emoji) {
+    this.emojiService.changeFavoriteState(emoji);
+  }
+
+  onRemove(emoji: Emoji) {
+    this.emojiService.removeEmoji(emoji);
+  }
+
 }
