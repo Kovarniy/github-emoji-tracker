@@ -1,25 +1,55 @@
 @import "../../../styles";
 
+.star:hover {
+  color: #FFE196;
+}
+
 .star--clicked {
- color: #FFC841;
+ color: #FFC841 !important;
+}
+
+.action-item:hover {
+  color: #8C98DA;
 }
 
 .emoji-table {
   width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.emoji-table td {
+  border-bottom: 1px solid #8C98DA;
+  padding: 10px;
 }
 
 .emoji-table__name {
-  width: 15%;
+  width: 20%;
 }
 
 .emoji-table__url {
-  width: 55%;
+  width: 60%;
 }
 
 .emoji-table__preview {
-  width: 15%;
+  width: 10%;
 }
 
 .emoji-table__actions {
-  width: 15%;
+  width: 10%;
 }
+
+.emoji-table__url-item {
+  overflow-wrap: break-word;
+}
+
+.emoji-table__preview-item {
+  text-align: center;
+}
+
+.emoji-table__actions-item {
+  text-align: center;
+}
+
+
+

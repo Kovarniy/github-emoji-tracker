@@ -15,21 +15,21 @@
       <ng-container *ngFor="let emoji of emojiList | search:neededEmojiName ">
         <tr *ngIf="!emoji.isRemoved">
           <td>{{emoji?.name}}</td>
-          <td>{{emoji?.url}}</td>
-          <td>
+          <td class="emoji-table__url-item">{{emoji?.url}}</td>
+          <td class="emoji-table__preview-item">
             <app-image-with-popover [emoji]="emoji">
             </app-image-with-popover>
           </td>
-          <td>
+          <td class="emoji-table__actions-item">
             <fa-icon [icon]="faStar"
                      [ngClass]="{'star--clicked': emoji.isFavorite}"
-                     class="clicked-element"
+                     class="clickable-element star"
                      (click)="onChangeFavoriteState(emoji)">
             </fa-icon>
           </td>
-          <td>
+          <td class="emoji-table__actions-item">
             <fa-icon [icon]="faRemove"
-                     class="clicked-element"
+                     class="clickable-element action-item"
                      (click)="onRemove(emoji)">
             </fa-icon>
           </td>
