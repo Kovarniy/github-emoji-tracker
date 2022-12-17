@@ -4,6 +4,11 @@
      (mouseleave)="onHidden()"
 >
 
-<div [@popOverState]="stateName">
+<div [@popOverState]="stateName"
+     [ngClass]="{
+     'emoji-full--disabled': !this.show,
+     'emoji-full--active': this.show
+     }"
+     class="emoji-full">
   <img [src]="emoji?.url" [alt]="emoji?.name">
 </div>

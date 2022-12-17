@@ -1,13 +1,22 @@
 .sidebar {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3F52B5;
+  height: 100vh;
+}
+
+.sidebar__list {
+  display: flex;
   flex-direction: column;
 }
 
 .sidebar__item {
   margin: 5px 10px;
-  border: 1px solid black;
+  color: #FFFFFF;
+  text-align: center;
 }
 
 .sidebar__item--active {
-  color: red;
+  color: #FFC841;
 }

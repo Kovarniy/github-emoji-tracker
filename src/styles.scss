@@ -1,4 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
 .clicked-element {
   cursor: pointer;
 }
+
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: "Open Sans";
+}
+

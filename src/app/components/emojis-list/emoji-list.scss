@@ -1,5 +1,25 @@
 @import "../../../styles";
 
 .star--clicked {
- color: gold;
+ color: #FFC841;
+}
+
+.emoji-table {
+  width: 100%;
+}
+
+.emoji-table__name {
+  width: 15%;
+}
+
+.emoji-table__url {
+  width: 55%;
+}
+
+.emoji-table__preview {
+  width: 15%;
+}
+
+.emoji-table__actions {
+  width: 15%;
 }
