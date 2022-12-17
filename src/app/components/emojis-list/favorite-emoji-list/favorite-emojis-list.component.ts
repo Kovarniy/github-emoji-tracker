@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {EmojiService} from "../../../services/emoji.service";
+import {Emoji} from "../../../models/Emoji";
+import { faRemove } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-favorites-emojis-list',
@@ -7,11 +9,27 @@ import {EmojiService} from "../../../services/emoji.service";
   styleUrls: ['./favorite-emojis-list.component.scss']
 })
 export class FavoriteEmojisListComponent implements OnInit {
+  title = 'любимые';
+  emojiList!: Emoji[];
+  faRemove = faRemove;
 
-  constructor(private emojiService: EmojiService) { }
+  /**
+   * Искомое имя emoji
+   */
+  neededEmojiName: string = '';
 
-  ngOnInit(): void {
-    this.emojiService.getEmojis();
+  constructor(private emojiService: EmojiService) {
   }
 
+  ngOnInit(): void {
+    this.emojiList = this.emojiService.getEmojis();
+  }
+
+  onSearchEmoji(emojiName: string) {
+    this.neededEmojiName = emojiName;
+  }
+
+  onRemoveFromFavorite(emoji: Emoji) {
+    this.emojiService.changeFavoriteState(emoji);
+  }
 }

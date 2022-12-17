@@ -16,7 +16,9 @@ export class EmojiService {
         const entries = Object.entries(emojis);
 
         for (const [emojiName, emojiUrl] of entries) {
-          this.emojiList.push(new Emoji(emojiName, emojiUrl as string));
+          this.emojiList.push(new Emoji(emojiName, emojiUrl as string,
+            this.isEmojiRemoved(emojiName),
+            this.isEmojiFavorite(emojiName)));
         }
       });
   }
@@ -38,11 +40,19 @@ export class EmojiService {
       favoriteEmojis.delete(emoji.name);
       emoji.isFavorite = false;
     }
-    this.updateSetStateFromLocalStorage('favorite', favoriteEmojis);
+    this.updateSetStateInLocalStorage('favorite', favoriteEmojis);
   }
 
   removeEmoji(emoji: Emoji) {
-
+    const favoriteEmojis = this.getSetStateFromLocalStorage('removed');
+    if (!favoriteEmojis.has(emoji.name)) {
+      favoriteEmojis.add(emoji.name);
+      emoji.isRemoved = true;
+    } else {
+      favoriteEmojis.delete(emoji.name);
+      emoji.isRemoved = false;
+    }
+    this.updateSetStateInLocalStorage('removed', favoriteEmojis);
   }
 
   /**
@@ -63,9 +73,19 @@ export class EmojiService {
    * @param key ключь эелемента в LocalStorage
    * @param savedSet сохраняемое множество
    */
-  private updateSetStateFromLocalStorage(key: string, savedSet: Set<string>) {
+  private updateSetStateInLocalStorage(key: string, savedSet: Set<string>) {
     const savedArray = Array.from(savedSet);
     localStorage.setItem(key, JSON.stringify(savedArray));
+  }
+
+  private isEmojiRemoved(emojiName: string): boolean {
+    const removedEmojis = this.getSetStateFromLocalStorage('removed');
+    return removedEmojis.has(emojiName);
+  }
+
+  private isEmojiFavorite(emojiName: string): boolean {
+    const favoriteEmojis = this.getSetStateFromLocalStorage('favorite');
+    return favoriteEmojis.has(emojiName);
   }
 
 }

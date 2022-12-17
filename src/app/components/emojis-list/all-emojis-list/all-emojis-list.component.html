@@ -1,25 +1,25 @@
-<div class="list-title">
+<header class="list-title">
   <div>
     {{title.toUpperCase()}}
   </div>
 
   <app-search-field (searchEmoji)="onSearchEmoji($event)">
   </app-search-field>
-</div>
+</header>
 
 <table>
   <thead>
-    <tr>
-      <th>Название</th>
-      <th>Ссылка</th>
-      <th>Превью</th>
-      <th colspan="2">Действия</th>
-    </tr>
+  <tr>
+    <th>Название</th>
+    <th>Ссылка</th>
+    <th>Превью</th>
+    <th colspan="2">Действия</th>
+  </tr>
   </thead>
   <tbody>
     <ng-container *ngIf="emojiList && emojiList.length > 0 ; else notData">
-      <tr *ngFor="let emoji of emojiList | search:neededEmojiName ">
-        <ng-container *ngIf="!neededEmojiName || emoji?.name?.includes(neededEmojiName)">
+      <ng-container *ngFor="let emoji of emojiList | search:neededEmojiName ">
+        <tr *ngIf="!emoji.isRemoved">
           <td>{{emoji?.name}}</td>
           <td>{{emoji?.url}}</td>
           <td>
@@ -37,8 +37,8 @@
                      class="clicked-element"
                      (click)="onRemove(emoji)"></fa-icon>
           </td>
-        </ng-container>
-      </tr>
+        </tr>
+      </ng-container>
     </ng-container>
   </tbody>
 </table>

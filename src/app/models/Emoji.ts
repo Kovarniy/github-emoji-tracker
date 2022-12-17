@@ -4,10 +4,10 @@ export class Emoji {
   isRemoved: boolean;
   isFavorite: boolean;
 
-  constructor(name: string, url: string) {
+  constructor(name: string, url: string, isRemoved: boolean, isFavorite: boolean) {
     this.name = name;
     this.url = url;
-    this.isRemoved = false;
-    this.isFavorite = false;
+    this.isRemoved = isRemoved;
+    this.isFavorite = isFavorite;
   }
 }
