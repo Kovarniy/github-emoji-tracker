@@ -1,0 +1,9 @@
+<img [src]="emoji?.url" [alt]="emoji?.name"
+     class="emoji-preview"
+     (mouseenter)="onShow()"
+     (mouseleave)="onHidden()"
+>
+
+<div [@popOverState]="stateName">
+  <img [src]="emoji?.url" [alt]="emoji?.name">
+</div>

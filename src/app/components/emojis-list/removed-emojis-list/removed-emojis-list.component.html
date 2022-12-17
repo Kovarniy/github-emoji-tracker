@@ -18,13 +18,14 @@
           <td>{{emoji?.name}}</td>
           <td>{{emoji?.url}}</td>
           <td>
-            <img [src]="emoji?.url" [alt]="emoji?.name"
-                 class="emoji-preview">
+            <app-image-with-popover [emoji]="emoji">
+            </app-image-with-popover>
           </td>
           <td>
             <fa-icon [icon]="faReply"
                      class="clicked-element"
-                     (click)="onRecoverEmoji(emoji)"></fa-icon>
+                     (click)="onRecoverEmoji(emoji)">
+            </fa-icon>
           </td>
         </tr>
       </ng-container>

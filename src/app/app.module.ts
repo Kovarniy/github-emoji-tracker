@@ -12,6 +12,8 @@ import { RemovedEmojisListComponent } from './components/emojis-list/removed-emo
 import { SearchPipe } from './pipes/search.pipe';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HeaderComponent } from './components/header/header.component';
+import { ImageWithPopoverComponent } from './components/image-with-popover/image-with-popover.component';
+import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -22,13 +24,16 @@ import { HeaderComponent } from './components/header/header.component';
     FavoriteEmojisListComponent,
     RemovedEmojisListComponent,
     SearchPipe,
-    HeaderComponent
+    HeaderComponent,
+    ImageWithPopoverComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
