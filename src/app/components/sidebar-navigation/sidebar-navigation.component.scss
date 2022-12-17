@@ -9,21 +9,18 @@
 .sidebar__list {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .sidebar__item {
-  margin: 5px 10px;
   color: #FFFFFF;
-  text-align: center;
   font-size: 26px;
-
-  //background-color: #324191;
   padding: 20px;
-  border-radius: 5px;
+  text-align: left;
 }
 
 .sidebar__item:hover {
-  color: #FFE196;
+  //color: #FFE196;
   background-color: #142476;
 }
 

@@ -19,6 +19,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  img {
+    max-width: 65px;
+    max-height: 65px;
+  }
 }
 
 .emoji-full--disabled {
