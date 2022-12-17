@@ -9,7 +9,6 @@ import { faRemove } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./favorite-emojis-list.component.scss']
 })
 export class FavoriteEmojisListComponent implements OnInit {
-  title = 'любимые';
   emojiList!: Emoji[];
   faRemove = faRemove;
 

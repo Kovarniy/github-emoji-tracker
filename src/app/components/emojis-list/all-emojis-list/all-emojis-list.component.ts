@@ -11,7 +11,6 @@ import { faRemove } from '@fortawesome/free-solid-svg-icons';
 })
 export class AllEmojisListComponent implements OnInit {
 
-  title = 'все';
   emojiList!: Emoji[];
   faStar = faStar;
   faRemove = faRemove;
@@ -37,7 +36,7 @@ export class AllEmojisListComponent implements OnInit {
   }
 
   onRemove(emoji: Emoji) {
-    this.emojiService.removeEmoji(emoji);
+    this.emojiService.changeRemovedState(emoji);
   }
 
 }

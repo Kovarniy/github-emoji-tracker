@@ -9,7 +9,6 @@ import {faRepeat, faReply} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./removed-emojis-list.component.scss']
 })
 export class RemovedEmojisListComponent implements OnInit {
-  title = 'любимые';
   emojiList!: Emoji[];
   faReply = faRepeat;
 
@@ -30,7 +29,7 @@ export class RemovedEmojisListComponent implements OnInit {
   }
 
   onRecoverEmoji(emoji: Emoji) {
-    this.emojiService.removeEmoji(emoji);
+    this.emojiService.changeRemovedState(emoji);
   }
 
 }

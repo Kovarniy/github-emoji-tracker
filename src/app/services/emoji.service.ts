@@ -29,7 +29,8 @@ export class EmojiService {
 
   /**
    * Добавляет и удаляет emoji из множества любимых.
-   * @param emoji
+   * Каждый вызов метода меняет состояние "isFavorite" на противоположное.
+   * @param emoji текущий emoji
    */
   changeFavoriteState(emoji: Emoji) {
     const favoriteEmojis = this.getSetStateFromLocalStorage('favorite');
@@ -43,7 +44,12 @@ export class EmojiService {
     this.updateSetStateInLocalStorage('favorite', favoriteEmojis);
   }
 
-  removeEmoji(emoji: Emoji) {
+  /**
+   * Добавляет и удаляет emoji из множества удаленных.
+   * Каждый вызов метода меняет состояние "isRemoved" на противоположное.
+   * @param emoji текущий emoji
+   * */
+  changeRemovedState(emoji: Emoji) {
     const favoriteEmojis = this.getSetStateFromLocalStorage('removed');
     if (!favoriteEmojis.has(emoji.name)) {
       favoriteEmojis.add(emoji.name);
