@@ -2,19 +2,20 @@
             (searchEmoji)="onSearchEmoji($event)">
 </app-header>
 
-<table class="emoji-table">
-  <thead>
+<cdk-virtual-scroll-viewport appendOnly itemSize="12" class="virtual-scroll">
+  <table class="emoji-table">
+    <thead>
     <tr>
       <th class="emoji-table__name">Название</th>
       <th class="emoji-table__url">Ссылка</th>
       <th class="emoji-table__preview">Превью</th>
       <th class="emoji-table__actions">Действия</th>
     </tr>
-  </thead>
-  <tbody>
+    </thead>
+    <tbody>
     <ng-container *ngIf="emojiList && emojiList.length > 0 ; else notData">
-      <ng-container *ngFor="let emoji of emojiList | search:neededEmojiName ">
-        <tr *ngIf="emoji.isFavorite">
+      <ng-container *cdkVirtualFor="let emoji of emojiList | search:neededEmojiName ">
+        <tr>
           <td>{{emoji?.name}}</td>
           <td class="emoji-table__url-item">
             <a [href]="emoji?.url">{{emoji?.url}}</a>
@@ -32,8 +33,9 @@
         </tr>
       </ng-container>
     </ng-container>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+</cdk-virtual-scroll-viewport>
 
 <ng-template #notData>
   <tr>

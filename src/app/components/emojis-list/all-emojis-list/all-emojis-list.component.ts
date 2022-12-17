@@ -7,7 +7,7 @@ import { faRemove } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-all-emojis-list',
   templateUrl: './all-emojis-list.component.html',
-  styleUrls: ['./all-emojis-list.component.scss']
+  styleUrls: ['./all-emojis-list.component.scss'],
 })
 export class AllEmojisListComponent implements OnInit {
 

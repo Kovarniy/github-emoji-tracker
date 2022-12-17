@@ -21,7 +21,8 @@ export class RemovedEmojisListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.emojiList = this.emojiService.getEmojis();
+    this.emojiList = this.emojiService.getEmojis()
+      .filter(item => item.isRemoved);
   }
 
   onSearchEmoji(emojiName: string) {

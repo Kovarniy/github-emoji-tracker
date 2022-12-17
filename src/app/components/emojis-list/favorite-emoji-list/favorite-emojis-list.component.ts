@@ -21,7 +21,8 @@ export class FavoriteEmojisListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.emojiList = this.emojiService.getEmojis();
+    this.emojiList = this.emojiService.getEmojis()
+      .filter(item => item.isFavorite);
   }
 
   onSearchEmoji(emojiName: string) {
