@@ -16,7 +16,9 @@
       <ng-container *ngFor="let emoji of emojiList | search:neededEmojiName ">
         <tr *ngIf="emoji.isRemoved">
           <td>{{emoji?.name}}</td>
-          <td class="emoji-table__url-item">{{emoji?.url}}</td>
+          <td class="emoji-table__url-item">
+            <a [href]="emoji?.url">{{emoji?.url}}</a>
+          </td>
           <td class="emoji-table__preview-item">
             <app-image-with-popover [emoji]="emoji">
             </app-image-with-popover>

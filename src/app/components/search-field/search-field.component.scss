@@ -1,12 +1,12 @@
 .search-bar {
-  height: 28px;
+  height: 36px;
   padding-left: 15px;
   font-size: 18px;
-  border-color: #8C98DA;
+  border: 3px solid #8c98Da;
   border-radius: 10px;
 }
 
-.search-bar:focus,
-.search-bar:active {
-  border-color: #8C98DA;
+.search-bar:focus {
+  outline: none;
+  border-color: #3F52B5;
 }
