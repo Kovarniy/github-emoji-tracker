@@ -5,7 +5,7 @@
 }
 
 .star--clicked {
- color: #FFC841 !important;
+  color: #FFC841 !important;
 }
 
 .action-item:hover {
@@ -63,6 +63,10 @@
 
 .emoji-table__actions-item {
   text-align: center;
+
+  .star {
+    padding-right: 15px;
+  }
 }
 
 .virtual-scroll {

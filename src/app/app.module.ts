@@ -6,9 +6,7 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import { SidebarNavigationComponent } from './components/sidebar-navigation/sidebar-navigation.component';
 import { SearchFieldComponent } from './components/search-field/search-field.component';
-import { AllEmojisListComponent } from './components/emojis-list/all-emojis-list/all-emojis-list.component';
-import { FavoriteEmojisListComponent } from './components/emojis-list/favorite-emoji-list/favorite-emojis-list.component';
-import { RemovedEmojisListComponent } from './components/emojis-list/removed-emojis-list/removed-emojis-list.component';
+import { EmojisListComponent } from './components/emojis-list/emojis-list.component';
 import { SearchPipe } from './pipes/search.pipe';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HeaderComponent } from './components/header/header.component';
@@ -21,9 +19,7 @@ import {ScrollingModule} from "@angular/cdk/scrolling";
     AppComponent,
     SidebarNavigationComponent,
     SearchFieldComponent,
-    AllEmojisListComponent,
-    FavoriteEmojisListComponent,
-    RemovedEmojisListComponent,
+    EmojisListComponent,
     SearchPipe,
     HeaderComponent,
     ImageWithPopoverComponent

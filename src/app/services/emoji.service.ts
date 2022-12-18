@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Emoji} from "../models/Emoji";
+import {BehaviorSubject} from "rxjs";
 
 @Injectable({
   providedIn: 'root',
@@ -8,6 +9,8 @@ import {Emoji} from "../models/Emoji";
 export class EmojiService {
 
   private emojiList: Emoji[] = [];
+
+  private emoji$:BehaviorSubject<Emoji[]> = new BehaviorSubject<Emoji[]>([]);
 
   constructor(public http: HttpClient) {
     this.http.get('https://api.github.com/emojis')
@@ -19,11 +22,13 @@ export class EmojiService {
             this.isEmojiRemoved(emojiName),
             this.isEmojiFavorite(emojiName)));
         }
+
+        this.emoji$.next(this.emojiList);
       });
   }
 
   getEmojis() {
-    return this.emojiList;
+    return this.emoji$;
   }
 
   /**
@@ -41,6 +46,7 @@ export class EmojiService {
       emoji.isFavorite = false;
     }
     this.updateSetStateInLocalStorage('favorite', favoriteEmojis);
+    this.emoji$.next(this.emojiList);
   }
 
   /**
@@ -58,6 +64,7 @@ export class EmojiService {
       emoji.isRemoved = false;
     }
     this.updateSetStateInLocalStorage('removed', favoriteEmojis);
+    this.emoji$.next(this.emojiList);
   }
 
   /**
