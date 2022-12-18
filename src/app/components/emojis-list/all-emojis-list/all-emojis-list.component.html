@@ -26,6 +26,7 @@
           </td>
           <td class="emoji-table__actions-item">
             <fa-icon [icon]="faStar"
+                     [size]="'lg'"
                      [ngClass]="{'star--clicked': emoji.isFavorite}"
                      class="clickable-element star"
                      (click)="onChangeFavoriteState(emoji)">
@@ -33,6 +34,7 @@
           </td>
           <td class="emoji-table__actions-item">
             <fa-icon [icon]="faRemove"
+                     [size]="'lg'"
                      class="clickable-element action-item"
                      (click)="onRemove(emoji)">
             </fa-icon>

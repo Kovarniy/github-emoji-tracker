@@ -44,7 +44,8 @@
   overflow-wrap: break-word;
   a:hover {
     font-weight: bold;
-    color: #FFC841;
+    //color: #FFC841;
+    color: #8C98DA;
   }
 }
 
@@ -56,10 +57,10 @@
   text-align: center;
 }
 
-
 .virtual-scroll {
-  height: 80%;
-  width: 100%;
+  position: fixed;
+  height: 100vh;
+  width: calc(100% - 315px);
   border: none
 }
 
