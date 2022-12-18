@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {EmojiService} from "./services/emoji.service";
 
 @Component({
   selector: 'app-root',
@@ -8,8 +7,7 @@ import {EmojiService} from "./services/emoji.service";
 })
 export class AppComponent {
 
-  constructor(public e: EmojiService) {
-    this.e.getEmojis();
+  constructor() {
   }
 
 }

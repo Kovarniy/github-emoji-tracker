@@ -28,7 +28,7 @@ import {
 })
 export class ImageWithPopoverComponent {
 
-  @Input() emoji!: Emoji;
+  @Input() emoji?: Emoji;
 
   show: boolean = false;
 

@@ -25,7 +25,7 @@ export class SearchFieldComponent implements AfterViewInit {
         distinctUntilChanged()
       )
       .subscribe(emojiName => {
-        this.searchEmoji.emit(emojiName.trim().toLowerCase());
+        this.searchEmoji.emit(emojiName);
       })
   }
 

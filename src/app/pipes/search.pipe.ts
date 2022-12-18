@@ -8,7 +8,7 @@ export class SearchPipe implements PipeTransform {
 
   transform(emojis: Emoji[], searchValue: string): Emoji[] {
     return emojis
-      .filter(emoji => emoji.name.toLowerCase().includes(searchValue));
+      .filter(emoji => emoji.name.toLowerCase().includes(searchValue.trim().toLowerCase()));
   }
 
 }
