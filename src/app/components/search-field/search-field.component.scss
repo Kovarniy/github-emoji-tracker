@@ -1,5 +1,5 @@
 .search-bar {
-  height: 36px;
+  height: 26px;
   padding-left: 15px;
   font-size: 18px;
   border: 3px solid #8c98Da;
@@ -9,4 +9,16 @@
 .search-bar:focus {
   outline: none;
   border-color: #3F52B5;
+}
+
+@media (min-width: 768px) {
+  .search-bar {
+    height: 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  .search-bar {
+    height: 36px;
+  }
 }

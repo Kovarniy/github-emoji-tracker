@@ -8,12 +8,28 @@
 .i-header__title {
   h1 {
     font-weight: bold;
-    font-size: 36px;
+    font-size: 26px;
   }
 
   hr {
     height: 3px;
     background-color: #142476;
     border-radius: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .i-header__title {
+    h1 {
+      font-size: 30px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .i-header__title {
+    h1 {
+      font-size: 36px;
+    }
   }
 }

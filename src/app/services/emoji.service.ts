@@ -4,7 +4,6 @@ import {Emoji} from "../models/Emoji";
 
 @Injectable({
   providedIn: 'root',
-  // useExisting: true
 })
 export class EmojiService {
 

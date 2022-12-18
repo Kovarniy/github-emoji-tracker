@@ -22,6 +22,7 @@
 .emoji-table th {
   border-bottom: 1px solid #8C98DA;
   padding: 10px;
+  font-size: 14px;
 }
 
 .emoji-table__name {
@@ -29,7 +30,7 @@
 }
 
 .emoji-table__url {
-  width: 60%;
+  width: 55%;
 }
 
 .emoji-table__preview {
@@ -37,11 +38,18 @@
 }
 
 .emoji-table__actions {
-  width: 10%;
+  width: 15%;
+}
+
+.emoji-table__name-item {
+  overflow-wrap: break-word;
 }
 
 .emoji-table__url-item {
-  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
   a:hover {
     font-weight: bold;
     //color: #FFC841;
@@ -60,7 +68,58 @@
 .virtual-scroll {
   position: fixed;
   height: 100vh;
-  width: calc(100% - 315px);
+  width: calc(100% - 150px);
   border: none
 }
 
+@media (min-width: 576px) {
+  .virtual-scroll {
+    width: calc(100% - 210px);
+  }
+}
+
+@media (min-width: 768px) {
+  .virtual-scroll {
+    width: calc(100% - 245px);
+  }
+}
+
+@media (min-width: 992px) {
+
+  .emoji-table td,
+  .emoji-table th {
+    font-size: 16px;
+  }
+
+  .virtual-scroll {
+    width: calc(100% - 295px);
+  }
+
+  .emoji-table__url-item {
+    overflow: visible;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+
+  .emoji-table__url {
+    width: 57%;
+  }
+
+  .emoji-table__actions {
+    width: 13%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .virtual-scroll {
+    width: calc(100% - 315px);
+  }
+
+  .emoji-table__url {
+    width: 60%;
+  }
+
+  .emoji-table__actions {
+    width: 10%;
+  }
+}

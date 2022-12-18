@@ -16,7 +16,9 @@
     <ng-container *ngIf="emojiList && emojiList.length > 0 ; else notData">
       <ng-container *cdkVirtualFor="let emoji of emojiList | search:neededEmojiName ">
         <tr *ngIf="!emoji.isRemoved">
-          <td>{{emoji?.name}}</td>
+          <td class="emoji-table__name-item">
+            {{emoji?.name}}
+          </td>
           <td class="emoji-table__url-item">
             <a [href]="emoji?.url">{{emoji?.url}}</a>
           </td>
